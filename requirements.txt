@@ -1,0 +1,6 @@
+torch
+transformers
+mlflow
+numpy
+scikit-learn
+onnx

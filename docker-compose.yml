@@ -1,0 +1,180 @@
+version: '3.9'
+
+# ── LiveYDream ML Services ────────────────────────────────────
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: lyd-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       ${POSTGRES_DB:-lyd_dev}
+      POSTGRES_USER:     ${POSTGRES_USER:-lyd}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lyd_secret}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lyd}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Redis ───────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: lyd-redis
+    restart: unless-stopped
+    command: redis-server --requirepass ${REDIS_PASSWORD:-redis_secret} --maxmemory 512mb --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-redis_secret}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── MinIO (S3-compatible model storage) ─────────────────────
+  minio:
+    image: minio/minio:latest
+    container_name: lyd-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER:     ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── NestJS Backend ──────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: lyd-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      NODE_ENV:         ${NODE_ENV:-development}
+      PORT:             3000
+      # Database
+      DB_HOST:          postgres
+      DB_PORT:          5432
+      DB_NAME:          ${POSTGRES_DB:-lyd_dev}
+      DB_USER:          ${POSTGRES_USER:-lyd}
+      DB_PASSWORD:      ${POSTGRES_PASSWORD:-lyd_secret}
+      # Redis
+      REDIS_HOST:       redis
+      REDIS_PORT:       6379
+      REDIS_PASSWORD:   ${REDIS_PASSWORD:-redis_secret}
+      # Firebase
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+      FIREBASE_CREDENTIALS: ${FIREBASE_CREDENTIALS}
+      # ML
+      PYTHON_WORKER_PATH: /app/ml-models
+      TRAINING_THRESHOLD: ${TRAINING_THRESHOLD:-500}
+      # MinIO / S3
+      S3_ENDPOINT:      http://minio:9000
+      S3_ACCESS_KEY:    ${MINIO_ROOT_USER:-minioadmin}
+      S3_SECRET_KEY:    ${MINIO_ROOT_PASSWORD:-minioadmin}
+      S3_BUCKET:        lyd-models
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./models:/app/models
+      - ./ml-models:/app/ml-models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Python ML Worker ────────────────────────────────────────
+  ml-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.ml
+    container_name: lyd-ml-worker
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI:-http://mlflow:5000}
+      MODEL_DIR:           /app/models
+      CUDA_VISIBLE_DEVICES: ${CUDA_VISIBLE_DEVICES:-}
+    volumes:
+      - ./models:/app/models
+      - ./ml-models:/app/ml-models
+      - mlflow_data:/app/mlruns
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    profiles:
+      - gpu     # docker compose --profile gpu up ml-worker
+
+  # ── MLflow tracking server ───────────────────────────────────
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.10.0
+    container_name: lyd-mlflow
+    restart: unless-stopped
+    command: >
+      mlflow server
+        --host 0.0.0.0
+        --port 5000
+        --backend-store-uri postgresql://${POSTGRES_USER:-lyd}:${POSTGRES_PASSWORD:-lyd_secret}@postgres/${POSTGRES_DB:-lyd_dev}
+        --default-artifact-root s3://lyd-models/mlflow
+    environment:
+      AWS_ACCESS_KEY_ID:     ${MINIO_ROOT_USER:-minioadmin}
+      AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+
+  # ── Bull Board (queue UI) ────────────────────────────────────
+  bull-board:
+    image: deadly0/bull-board:latest
+    container_name: lyd-bull-board
+    restart: unless-stopped
+    environment:
+      REDIS_HOST:     redis
+      REDIS_PORT:     6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-redis_secret}
+    ports:
+      - "3001:3000"
+    depends_on:
+      - redis
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:
+  mlflow_data:

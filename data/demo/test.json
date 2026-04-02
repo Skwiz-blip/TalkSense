@@ -1,0 +1,1635 @@
+[
+  {
+    "id": "t1",
+    "text": "Je veux une mise à jour sur l'avancement du projet Apollo.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "projet Apollo"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t2",
+    "text": "Peux-tu me confirmer si Sarah a bien reçu le contrat signé ?",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Sarah"
+      },
+      {
+        "type": "project",
+        "value": "contrat"
+      }
+    ],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "follow_up"
+      }
+    ],
+    "sentiment": 0.1,
+    "weight": 1
+  },
+  {
+    "id": "t3",
+    "text": "Il faut absolument décider aujourd'hui si on part sur React ou Angular pour le frontend.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "frontend"
+      }
+    ],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1.2
+  },
+  {
+    "id": "t4",
+    "text": "Le serveur de production est tombé depuis 14h, les clients ne peuvent plus se connecter.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "serveur de production"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.9,
+    "weight": 2
+  },
+  {
+    "id": "t5",
+    "text": "Planifie une réunion avec toute l'équipe marketing pour vendredi matin.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "équipe marketing"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t6",
+    "text": "Quel est le statut actuel du ticket JIRA-1042 concernant la migration de base de données ?",
+    "entities": [
+      {
+        "type": "project",
+        "value": "migration de base de données"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "follow_up"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t7",
+    "text": "Je suis très inquiet, on risque de rater la deadline du 15 mars si rien ne change.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "15 mars"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.8,
+    "weight": 1.8
+  },
+  {
+    "id": "t8",
+    "text": "Thomas a confirmé que la maquette Figma sera prête pour demain.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Thomas"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.4,
+    "weight": 0.8
+  },
+  {
+    "id": "t9",
+    "text": "Est-ce qu'on a un budget alloué pour le projet Omega ?",
+    "entities": [
+      {
+        "type": "project",
+        "value": "projet Omega"
+      }
+    ],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t10",
+    "text": "Il faut créer une tâche pour que Lucas refasse les tests de régression avant vendredi.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Lucas"
+      },
+      {
+        "type": "date",
+        "value": "vendredi"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": -0.2,
+    "weight": 1.3
+  },
+  {
+    "id": "t11",
+    "text": "Le client Nexia a rappelé trois fois ce matin, il est furieux à cause du retard de livraison.",
+    "entities": [
+      {
+        "type": "org",
+        "value": "Nexia"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "follow_up"
+      }
+    ],
+    "sentiment": -0.95,
+    "weight": 2
+  },
+  {
+    "id": "t12",
+    "text": "Tout se passe bien pour l'instant, l'équipe est mobilisée et les KPIs sont au vert.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.9,
+    "weight": 0.7
+  },
+  {
+    "id": "t13",
+    "text": "Rappelle-moi de relancer Marie concernant le rapport financier du T3.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Marie"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t14",
+    "text": "On doit choisir entre AWS et GCP pour héberger la nouvelle infrastructure.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1.1
+  },
+  {
+    "id": "t15",
+    "text": "Pourquoi l'API de paiement Stripe retourne une erreur 500 depuis hier soir ?",
+    "entities": [
+      {
+        "type": "project",
+        "value": "API de paiement Stripe"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.7,
+    "weight": 1.7
+  },
+  {
+    "id": "t16",
+    "text": "Peux-tu vérifier si le contrat NDA a été signé par les deux parties ?",
+    "entities": [
+      {
+        "type": "project",
+        "value": "contrat NDA"
+      }
+    ],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "follow_up"
+      }
+    ],
+    "sentiment": 0.1,
+    "weight": 1
+  },
+  {
+    "id": "t17",
+    "text": "Super nouvelle ! Le projet Phoenix a été validé par le comité directeur.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "projet Phoenix"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.95,
+    "weight": 0.6
+  },
+  {
+    "id": "t18",
+    "text": "Je veux qu'on planifie le sprint 14 avant la fin de la semaine.",
+    "entities": [],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0.1,
+    "weight": 1
+  },
+  {
+    "id": "t19",
+    "text": "Combien de tickets ouverts reste-t-il à traiter dans le backlog actuel ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t20",
+    "text": "Il faut décider si on repousse la démo client du 20 avril ou si on maintient la date.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "20 avril"
+      }
+    ],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.3,
+    "weight": 1.2
+  },
+  {
+    "id": "t21",
+    "text": "Le pipeline CI/CD est cassé, aucun déploiement n'est possible en ce moment.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "pipeline CI/CD"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.85,
+    "weight": 1.9
+  },
+  {
+    "id": "t22",
+    "text": "Crée une tâche pour qu'Alice prépare la présentation client pour lundi.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Alice"
+      },
+      {
+        "type": "date",
+        "value": "lundi"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0.1,
+    "weight": 1
+  },
+  {
+    "id": "t23",
+    "text": "Quelle est la version actuellement déployée en production ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t24",
+    "text": "On valide le go-live pour le 1er juin ou on demande un report ?",
+    "entities": [
+      {
+        "type": "date",
+        "value": "1er juin"
+      }
+    ],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1.2
+  },
+  {
+    "id": "t25",
+    "text": "La base de données est corrompue, on a perdu deux heures de transactions.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "base de données"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -1,
+    "weight": 2
+  },
+  {
+    "id": "t26",
+    "text": "Envoie un rappel à toute l'équipe pour la formation cybersécurité de jeudi.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "jeudi"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t27",
+    "text": "David a terminé l'intégration de l'API Google Maps, c'est en recette.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "David"
+      },
+      {
+        "type": "project",
+        "value": "API Google Maps"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.5,
+    "weight": 0.8
+  },
+  {
+    "id": "t28",
+    "text": "Qui est responsable du module de facturation dans le projet Helios ?",
+    "entities": [
+      {
+        "type": "project",
+        "value": "projet Helios"
+      }
+    ],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t29",
+    "text": "On doit trancher : on garde le prestataire actuel ou on internalise le support ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.2,
+    "weight": 1.1
+  },
+  {
+    "id": "t30",
+    "text": "Les tests unitaires échouent massivement depuis le merge de ce matin.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.8,
+    "weight": 1.8
+  },
+  {
+    "id": "t31",
+    "text": "Crée un rappel pour suivre la livraison du matériel informatique commandé.",
+    "entities": [],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t32",
+    "text": "Est-ce que le rapport de performance du mois d'octobre a été envoyé à la direction ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "follow_up"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t33",
+    "text": "On lance la campagne marketing le 15 ou le 22 novembre ?",
+    "entities": [
+      {
+        "type": "date",
+        "value": "15 novembre"
+      },
+      {
+        "type": "date",
+        "value": "22 novembre"
+      }
+    ],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.1,
+    "weight": 1
+  },
+  {
+    "id": "t34",
+    "text": "Excellent ! L'équipe a livré la V2 avec deux jours d'avance sur le planning.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 1,
+    "weight": 0.5
+  },
+  {
+    "id": "t35",
+    "text": "Le certificat SSL du domaine principal expire dans 3 jours, c'est urgent.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "3 jours"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.7,
+    "weight": 1.9
+  },
+  {
+    "id": "t36",
+    "text": "Ajoute une tâche pour que Julien documente l'API REST d'ici mercredi.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Julien"
+      },
+      {
+        "type": "date",
+        "value": "mercredi"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t37",
+    "text": "Quelle est la capacité restante du serveur de stockage secondaire ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t38",
+    "text": "Est-ce qu'on maintient le partenariat avec Salesforce ou on migre vers HubSpot ?",
+    "entities": [
+      {
+        "type": "org",
+        "value": "Salesforce"
+      },
+      {
+        "type": "org",
+        "value": "HubSpot"
+      }
+    ],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1.2
+  },
+  {
+    "id": "t39",
+    "text": "Le module d'authentification SSO ne fonctionne plus depuis la mise à jour de vendredi.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "vendredi"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.9,
+    "weight": 2
+  },
+  {
+    "id": "t40",
+    "text": "Rappelle-moi d'envoyer le compte rendu de réunion à Camille avant 18h.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Camille"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t41",
+    "text": "Où en est l'audit de sécurité commandé au cabinet externe ?",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "follow_up"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1.1
+  },
+  {
+    "id": "t42",
+    "text": "Je veux connaître le taux de conversion des leads sur les 30 derniers jours.",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t43",
+    "text": "On doit décider si on recrute un CTO maintenant ou dans 6 mois.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.2,
+    "weight": 1.3
+  },
+  {
+    "id": "t44",
+    "text": "Le déploiement de la V3.1 a planté en prod, rollback immédiat nécessaire.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "V3.1"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -1,
+    "weight": 2
+  },
+  {
+    "id": "t45",
+    "text": "Planifie une session de brainstorming avec l'équipe produit pour la semaine prochaine.",
+    "entities": [],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0.3,
+    "weight": 0.9
+  },
+  {
+    "id": "t46",
+    "text": "L'équipe QA confirme que le bug critique de la V3 est résolu.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "V3"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.8,
+    "weight": 0.7
+  },
+  {
+    "id": "t47",
+    "text": "Quel est le montant total des factures impayées client ce trimestre ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.2,
+    "weight": 1.1
+  },
+  {
+    "id": "t48",
+    "text": "On signe le bon de commande maintenant ou on attend la validation juridique ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1.2
+  },
+  {
+    "id": "t49",
+    "text": "Le webhook Slack ne reçoit plus les notifications depuis hier matin.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "webhook Slack"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.6,
+    "weight": 1.6
+  },
+  {
+    "id": "t50",
+    "text": "Crée une tâche pour que Nora finalise le cahier des charges avant le 10.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Nora"
+      },
+      {
+        "type": "date",
+        "value": "le 10"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t51",
+    "text": "Peux-tu me dire combien d'utilisateurs actifs on a eu la semaine dernière ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t52",
+    "text": "Il faut décider entre prolonger le sprint ou livrer une version partielle.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.3,
+    "weight": 1.3
+  },
+  {
+    "id": "t53",
+    "text": "Les backups automatiques n'ont pas tourné depuis dimanche, risque de perte de données.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "dimanche"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.9,
+    "weight": 2
+  },
+  {
+    "id": "t54",
+    "text": "Rappelle à l'équipe de compléter leurs feuilles de temps avant vendredi.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "vendredi"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t55",
+    "text": "La demo présentée hier au client Vertex a été très bien reçue.",
+    "entities": [
+      {
+        "type": "org",
+        "value": "Vertex"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.9,
+    "weight": 0.6
+  },
+  {
+    "id": "t56",
+    "text": "Combien coûte la licence annuelle du logiciel qu'on utilise pour la BI ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t57",
+    "text": "On arrête le développement mobile ou on continue avec une équipe réduite ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.4,
+    "weight": 1.4
+  },
+  {
+    "id": "t58",
+    "text": "Le taux d'erreur sur l'endpoint /checkout a explosé à 23% cette nuit.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "endpoint /checkout"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -1,
+    "weight": 2
+  },
+  {
+    "id": "t59",
+    "text": "Ajoute une tâche pour qu'Antoine configure l'environnement de staging.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Antoine"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t60",
+    "text": "Le service client signale une augmentation des tickets liés à la lenteur de l'app.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "follow_up"
+      }
+    ],
+    "sentiment": -0.5,
+    "weight": 1.5
+  },
+  {
+    "id": "t61",
+    "text": "Quelle est la roadmap prévue pour le deuxième semestre ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.1,
+    "weight": 1
+  },
+  {
+    "id": "t62",
+    "text": "Doit-on accepter la proposition de rachat de la startup Codex ou refuser ?",
+    "entities": [
+      {
+        "type": "org",
+        "value": "Codex"
+      }
+    ],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1.5
+  },
+  {
+    "id": "t63",
+    "text": "L'intégration avec le système ERP du client est bloquée depuis trois semaines.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "système ERP"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "follow_up"
+      }
+    ],
+    "sentiment": -0.7,
+    "weight": 1.7
+  },
+  {
+    "id": "t64",
+    "text": "Crée un rappel pour relancer le fournisseur à propos de la livraison de matériel.",
+    "entities": [],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1
+  },
+  {
+    "id": "t65",
+    "text": "Pierre a finalisé la migration vers PostgreSQL 15, tout fonctionne normalement.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Pierre"
+      },
+      {
+        "type": "project",
+        "value": "PostgreSQL 15"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.7,
+    "weight": 0.7
+  },
+  {
+    "id": "t66",
+    "text": "Quel est le délai moyen de résolution des tickets de support niveau 2 ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t67",
+    "text": "On externalise la comptabilité ou on maintient le poste en interne ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1.2
+  },
+  {
+    "id": "t68",
+    "text": "Les logs de l'application montrent des tentatives d'intrusion répétées ce matin.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.95,
+    "weight": 2
+  },
+  {
+    "id": "t69",
+    "text": "Rappelle-moi de vérifier les accès VPN expirés en fin de journée.",
+    "entities": [],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t70",
+    "text": "L'équipe a terminé la phase de test avec un taux de couverture de 87%.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.8,
+    "weight": 0.7
+  },
+  {
+    "id": "t71",
+    "text": "Quelles sont les ressources allouées au projet Delta pour Q4 ?",
+    "entities": [
+      {
+        "type": "project",
+        "value": "projet Delta"
+      }
+    ],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t72",
+    "text": "Faut-il prioriser le correctif de sécurité ou la nouvelle fonctionnalité de reporting ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.2,
+    "weight": 1.3
+  },
+  {
+    "id": "t73",
+    "text": "La synchronisation entre le CRM et l'outil de facturation est en échec depuis 48h.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "CRM"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.85,
+    "weight": 1.9
+  },
+  {
+    "id": "t74",
+    "text": "Crée une tâche pour Léa : préparer le bilan de fin de projet avant le 30.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Léa"
+      },
+      {
+        "type": "date",
+        "value": "le 30"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t75",
+    "text": "Le partenaire logistique a confirmé la livraison pour le 5 décembre.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "5 décembre"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.6,
+    "weight": 0.8
+  },
+  {
+    "id": "t76",
+    "text": "Peux-tu extraire la liste des clients ayant plus de 3 factures impayées ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1.1
+  },
+  {
+    "id": "t77",
+    "text": "Est-ce qu'on autorise le télétravail complet ou on impose deux jours au bureau ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t78",
+    "text": "On a détecté une fuite mémoire critique sur le worker de traitement d'images.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "worker de traitement d'images"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.9,
+    "weight": 2
+  },
+  {
+    "id": "t79",
+    "text": "Ajoute une tâche pour que Mehdi prépare la réponse à l'appel d'offres BNP.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Mehdi"
+      },
+      {
+        "type": "org",
+        "value": "BNP"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0.1,
+    "weight": 1
+  },
+  {
+    "id": "t80",
+    "text": "Les retours utilisateurs sur la nouvelle interface sont très positifs cette semaine.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.9,
+    "weight": 0.6
+  },
+  {
+    "id": "t81",
+    "text": "Y a-t-il un plan de continuité d'activité à jour pour notre équipe ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1
+  },
+  {
+    "id": "t82",
+    "text": "On opte pour le modèle freemium ou on reste sur un abonnement mensuel pur ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.1,
+    "weight": 1.2
+  },
+  {
+    "id": "t83",
+    "text": "Le token d'authentification admin a été compromis, il faut le révoquer immédiatement.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -1,
+    "weight": 2
+  },
+  {
+    "id": "t84",
+    "text": "Planifie une revue de code hebdomadaire chaque lundi matin à 9h.",
+    "entities": [
+      {
+        "type": "date",
+        "value": "lundi matin 9h"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0.2,
+    "weight": 1
+  },
+  {
+    "id": "t85",
+    "text": "Hugo a validé le nouveau design system, il est prêt pour intégration.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Hugo"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.7,
+    "weight": 0.7
+  },
+  {
+    "id": "t86",
+    "text": "Quelle est la date de fin de garantie du contrat avec notre hébergeur principal ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t87",
+    "text": "On garde le même prestataire SEO ou on réinternalise cette compétence ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1.1
+  },
+  {
+    "id": "t88",
+    "text": "La queue de messages RabbitMQ déborde, on approche des 200k messages en attente.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "queue RabbitMQ"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.8,
+    "weight": 1.8
+  },
+  {
+    "id": "t89",
+    "text": "Crée une tâche pour que Sophie rédige la politique de confidentialité mise à jour.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Sophie"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t90",
+    "text": "La mise en production de ce matin s'est déroulée sans incident.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.8,
+    "weight": 0.6
+  },
+  {
+    "id": "t91",
+    "text": "Combien de temps faut-il pour former un nouveau développeur sur notre stack ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t92",
+    "text": "Est-ce qu'on décale la conférence annuelle à mars ou on maintient en février ?",
+    "entities": [
+      {
+        "type": "date",
+        "value": "mars"
+      },
+      {
+        "type": "date",
+        "value": "février"
+      }
+    ],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1.1
+  },
+  {
+    "id": "t93",
+    "text": "Le script d'import de données client boucle à l'infini sur certains fichiers CSV.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "script d'import"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.7,
+    "weight": 1.7
+  },
+  {
+    "id": "t94",
+    "text": "Rappelle à Martin de soumettre sa note de frais avant la clôture comptable.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Martin"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_reminder"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t95",
+    "text": "Le taux de disponibilité de la plateforme est à 99.95% ce mois-ci, excellent.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 1,
+    "weight": 0.5
+  },
+  {
+    "id": "t96",
+    "text": "Quels sont les critères d'évaluation retenus pour le prochain appel d'offres ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0,
+    "weight": 1
+  },
+  {
+    "id": "t97",
+    "text": "On augmente le plafond de dépenses cloud ce trimestre ou on optimise l'existant ?",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": -0.1,
+    "weight": 1.2
+  },
+  {
+    "id": "t98",
+    "text": "Le dashboard de monitoring ne se charge plus depuis la mise à jour de Grafana.",
+    "entities": [
+      {
+        "type": "project",
+        "value": "dashboard Grafana"
+      }
+    ],
+    "intent": "problem_solving",
+    "actions": [
+      {
+        "action": "create_alert"
+      }
+    ],
+    "sentiment": -0.6,
+    "weight": 1.6
+  },
+  {
+    "id": "t99",
+    "text": "Crée une tâche pour qu'Inès contacte les clients premium avant la fin du mois.",
+    "entities": [
+      {
+        "type": "person",
+        "value": "Inès"
+      }
+    ],
+    "intent": "planning",
+    "actions": [
+      {
+        "action": "create_task"
+      }
+    ],
+    "sentiment": 0.2,
+    "weight": 1
+  },
+  {
+    "id": "t100",
+    "text": "Je suis ravi, l'onboarding du nouveau client Orion s'est très bien passé.",
+    "entities": [
+      {
+        "type": "org",
+        "value": "Orion"
+      }
+    ],
+    "intent": "status_update",
+    "actions": [
+      {
+        "action": "none"
+      }
+    ],
+    "sentiment": 0.95,
+    "weight": 0.5
+  }
+]

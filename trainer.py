@@ -230,7 +230,7 @@ def train_continuous(
     batch_size:    int   = 32,
     warmup_ratio:  float = 0.1,
     patience:      int   = 3,
-    pretrained:    str   = "camembert-base",
+    pretrained:    str   = "bert-base-multilingual-cased",
 ) -> Dict[str, float]:
     """
     Fine-tune the model on new data.  Writes best checkpoint + ONNX to
@@ -258,9 +258,9 @@ def train_continuous(
         logger.info(f"Loading base model from {current_model_dir}")
         model = ConversationAnalyzerModel.from_pretrained(str(current_model_dir))
     else:
-        logger.info(f"Initializing model from pretrained: {pretrained}")
+        logger.info(f"Initializing model from config (no weights download): {pretrained}")
         from conversation_analyzer import build_model
-        model = build_model(pretrained)
+        model = build_model(pretrained, load_weights=False)
 
     model.to(DEVICE)
 

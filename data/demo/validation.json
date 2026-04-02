@@ -1,0 +1,15 @@
+[
+  {
+    "id": "v1",
+    "text": "Marie va envoyer le compte-rendu avant vendredi.",
+    "entities": [
+      { "type": "person", "value": "Marie" },
+      { "type": "date", "value": "vendredi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task" }],
+    "sentiment": 0.0,
+    "weight": 1.2
+  }
+]
+

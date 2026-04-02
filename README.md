@@ -319,12 +319,10 @@ docker compose --profile gpu up
 │         │                                                       │
 │         ▼                                                       │
 │  ┌─────────────────────────────────────────────────────────┐    │
-│  │              PYTHON ML WORKER (GPU optionnel)             │    │
-│  │   • BERT multi-tâches (CamemBERT français)               │    │
-│  │   • Training loop avec MLflow tracking                   │    │
-│  │   • Export ONNX pour inférence                          │    │
-│  └─────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────────┘
+│  │              PYTHON ML WORKER (GPU optionnel)           
+│  │   • BERT multi-tâches (CamemBERT français)              
+│  │   • Training loop avec MLflow tracking                  
+│  │   • Export ONNX pour inférence                          
 ```
 
 ---
@@ -758,3 +756,76 @@ npm run start:dev
 4. **Bull Queue** = Jobs asynchrones pour le training
 5. **MLflow** = Tracking des expériences ML
 6. **Apprentissage continu** = Feedbacks → Réentraînement automatique
+
+
+cd c:\Users\HP\Downloads\files
+npm install --legacy-peer-
+
+
+# 1. Démarrer Docker
+docker compose -f docker-compose.local.yml up -d
+
+# 2. Lancer l'application
+npm run start:dev
+
+`npm run start:dev` lance le **backend NestJS**, qui est l'orchestrateur du système ML. Voici son rôle dans l'entraînement:
+
+## Rôle du backend NestJS
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    npm run start:dev                            │
+│                    (Backend NestJS)                              │
+│                                                                 │
+│  1. API REST                                                    │
+│     • POST /analyze → Inférence ONNX                           │
+│     • POST /feedback → Enregistre corrections                  │
+│     • GET /status → État du système                            │
+│                                                                 │
+│  2. Orchestration Training                                      │
+│     • Vérifie seuil 500 feedbacks                              │
+│     • Déclenche Bull Queue job                                 │
+│     • Lance script Python (trainer.py)                         │
+│     • Valide métriques                                         │
+│     • Déploie nouveau modèle                                   │
+│                                                                 │
+│  3. Services                                                    │
+│     • ModelInferenceService → Prédictions ONNX                 │
+│     • MLTrainingService → Pipeline d'entraînement             │
+│     • FeedbackService → Gestion feedbacks                      │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+## Ce que ça NE fait PAS
+
+- **N'entraîne pas directement le modèle** → C'est Python ([trainer.py](cci:7://file:///c:/Users/HP/Downloads/files/trainer.py:0:0-0:0))
+- **Ne charge pas les poids BERT** → C'est le worker Python
+
+## Flux complet d'entraînement
+
+```
+npm run start:dev (NestJS)
+       │
+       ▼ (500 feedbacks)
+Bull Queue job
+       │
+       ▼
+spawn('python3 trainer.py')  ←── L'entraînement réel se fait ici
+       │
+       ▼
+Metrics JSON → NestJS valide
+       │
+       ▼
+Déploiement ONNX
+```
+
+## Pour entraîner le modèle
+
+Vous avez besoin de:
+
+1. **Backend NestJS** → `npm run start:dev`
+2. **Redis** → `docker compose -f docker-compose.local.yml up -d redis`
+3. **Données annotées** → Dans Supabase (`model_feedback`, `conversation_annotations`)
+4. **Python + dépendances** → `pip install -r ml-models/requirements.txt`
+
+L'entraînement se déclenche automatiquement quand il y a 500+ feedbacks non utilisés.

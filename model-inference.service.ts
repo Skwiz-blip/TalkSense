@@ -5,11 +5,7 @@ import { Inject } from '@nestjs/common';
 import { Redis } from 'ioredis';
 import * as crypto from 'crypto';
 import { InferenceSession, Tensor } from 'onnxruntime-node';
-
-import { ConversationEntity } from '../entities/conversation.entity';
-import { MLInferenceLogEntity } from '../entities/ml-inference-log.entity';
-import { REDIS_CLIENT } from '../../redis/redis.constants';
-
+ 
 // ── Types ──────────────────────────────────────────────────
 export interface EntityResult {
   type: string;
@@ -118,15 +114,13 @@ export class ModelInferenceService implements OnModuleInit, OnModuleDestroy {
   }
 
   private async loadTokenizer(): Promise<void> {
-    try {
-      // Using @xenova/transformers for Node.js tokenization
-      const { AutoTokenizer } = await import('@xenova/transformers');
+    try {  
       this.tokenizer = await AutoTokenizer.from_pretrained(
         `./models/${this.currentVersion}/tokenizer`,
       );
-      this.logger.log('✅ Tokenizer loaded');
+      this.logger.log(' Tokenizer loaded');
     } catch (error) {
-      this.logger.warn('⚠️  Tokenizer load failed, falling back to simple tokenizer:', error);
+      this.logger.warn(' Tokenizer load failed, falling back to simple tokenizer:', error);
       this.tokenizer = null;
     }
   }
@@ -142,7 +136,7 @@ export class ModelInferenceService implements OnModuleInit, OnModuleDestroy {
     if (oldSession) {
       await oldSession.release?.();
     }
-    this.logger.log(`✅ Model reloaded to ${version}`);
+    this.logger.log(` Model reloaded to ${version}`);
   }
 
   // ── Main predict ───────────────────────────────────────
@@ -353,7 +347,7 @@ export class ModelInferenceService implements OnModuleInit, OnModuleDestroy {
     const actions: ActionResult[] = [];
 
     probs.forEach((prob, idx) => {
-      if (idx === 0 || prob < 0.4) return; // skip 'none'
+      if (idx === 0 || prob < 0.4) return;  
       const actionType = ACTION_LABELS[idx];
       if (!actionType) return;
 

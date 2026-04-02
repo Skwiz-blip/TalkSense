@@ -1,0 +1,1515 @@
+[
+  {
+    "id": "1",
+    "text": "Jean doit finaliser le module paiement avant le 30 avril.",
+    "entities": [
+      { "type": "person", "value": "Jean" },
+      { "type": "project", "value": "module paiement" },
+      { "type": "date", "value": "30 avril" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "finaliser le module paiement", "assignee": "Jean", "deadline": "30 avril", "priority": "high" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "2",
+    "text": "Peux-tu me rappeler de payer la facture demain ?",
+    "entities": [{ "type": "date", "value": "demain" }],
+    "intent": "information_request",
+    "actions": [{ "action": "create_reminder", "subject": "payer la facture", "deadline": "demain", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "3",
+    "text": "Le serveur est en panne depuis ce matin, il faut investiguer.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "follow_up", "subject": "panne serveur", "priority": "critical" }],
+    "sentiment": -0.4,
+    "weight": 1.0
+  },
+  {
+    "id": "4",
+    "text": "On a validé la solution, on déploie en production ce soir.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_alert", "subject": "déploiement production", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "5",
+    "text": "Marie doit envoyer le rapport financier à la direction avant vendredi 17h.",
+    "entities": [
+      { "type": "person", "value": "Marie" },
+      { "type": "project", "value": "rapport financier" },
+      { "type": "date", "value": "vendredi 17h" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "envoyer le rapport financier", "assignee": "Marie", "deadline": "vendredi 17h", "priority": "high" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "6",
+    "text": "Rappelle-moi d'appeler le client Dupont lundi matin.",
+    "entities": [
+      { "type": "person", "value": "Dupont" },
+      { "type": "date", "value": "lundi matin" }
+    ],
+    "intent": "information_request",
+    "actions": [{ "action": "create_reminder", "subject": "appeler le client Dupont", "deadline": "lundi matin", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "7",
+    "text": "La base de données plante aléatoirement depuis hier, on perd des transactions.",
+    "entities": [{ "type": "date", "value": "hier" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "instabilité base de données", "priority": "critical" }],
+    "sentiment": -0.7,
+    "weight": 1.2
+  },
+  {
+    "id": "8",
+    "text": "On a décidé de migrer vers React 18 pour améliorer les performances.",
+    "entities": [{ "type": "project", "value": "migration React 18" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "migration React 18", "priority": "medium" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "9",
+    "text": "Le sprint se termine le 5 mai, est-ce que tout le monde sera disponible pour la démo ?",
+    "entities": [{ "type": "date", "value": "5 mai" }],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "disponibilité démo sprint", "deadline": "5 mai", "priority": "medium" }],
+    "sentiment": 0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "10",
+    "text": "Paul a terminé la feature de connexion SSO, il faut faire la revue de code aujourd'hui.",
+    "entities": [
+      { "type": "person", "value": "Paul" },
+      { "type": "project", "value": "connexion SSO" },
+      { "type": "date", "value": "aujourd'hui" }
+    ],
+    "intent": "status_update",
+    "actions": [{ "action": "create_task", "subject": "revue de code SSO", "deadline": "aujourd'hui", "priority": "medium" }],
+    "sentiment": 0.4,
+    "weight": 1.0
+  },
+  {
+    "id": "11",
+    "text": "On planifie la réunion de lancement du projet CRM pour le 12 juin.",
+    "entities": [
+      { "type": "project", "value": "CRM" },
+      { "type": "date", "value": "12 juin" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "réunion lancement projet CRM", "deadline": "12 juin", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "12",
+    "text": "L'API tierce est inaccessible depuis 14h, les commandes ne passent plus.",
+    "entities": [{ "type": "date", "value": "14h" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "API tierce inaccessible", "priority": "critical" }],
+    "sentiment": -0.8,
+    "weight": 1.3
+  },
+  {
+    "id": "13",
+    "text": "Sophie va présenter les résultats Q1 lors du board meeting jeudi.",
+    "entities": [
+      { "type": "person", "value": "Sophie" },
+      { "type": "date", "value": "jeudi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "présentation résultats Q1", "assignee": "Sophie", "deadline": "jeudi", "priority": "high" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "14",
+    "text": "On a choisi AWS comme provider cloud pour les 3 prochaines années.",
+    "entities": [{ "type": "organization", "value": "AWS" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "migration AWS", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "15",
+    "text": "Le taux de conversion a chuté de 40% cette semaine, il faut analyser ça d'urgence.",
+    "entities": [{ "type": "date", "value": "cette semaine" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "follow_up", "subject": "analyse chute taux de conversion", "priority": "critical" }],
+    "sentiment": -0.6,
+    "weight": 1.2
+  },
+  {
+    "id": "16",
+    "text": "Lucas doit livrer les maquettes Figma pour la nouvelle homepage d'ici mercredi.",
+    "entities": [
+      { "type": "person", "value": "Lucas" },
+      { "type": "project", "value": "homepage" },
+      { "type": "date", "value": "mercredi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "livraison maquettes Figma homepage", "assignee": "Lucas", "deadline": "mercredi", "priority": "medium" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "17",
+    "text": "Pouvez-vous vérifier si les tests unitaires passent bien sur la branche develop ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "vérification tests unitaires develop", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "18",
+    "text": "On a signé le contrat avec Accenture pour la prestation de conseil.",
+    "entities": [{ "type": "organization", "value": "Accenture" }],
+    "intent": "status_update",
+    "actions": [{ "action": "create_task", "subject": "onboarding Accenture", "priority": "high" }],
+    "sentiment": 0.5,
+    "weight": 1.0
+  },
+  {
+    "id": "19",
+    "text": "Nathalie doit contacter le support Microsoft pour le problème de licence avant lundi.",
+    "entities": [
+      { "type": "person", "value": "Nathalie" },
+      { "type": "organization", "value": "Microsoft" },
+      { "type": "date", "value": "lundi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "follow_up", "subject": "contacter support Microsoft licence", "assignee": "Nathalie", "deadline": "lundi", "priority": "high" }],
+    "sentiment": -0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "20",
+    "text": "Le budget du projet a été approuvé à hauteur de 150 000 euros.",
+    "entities": [{ "type": "amount", "value": "150 000 euros" }],
+    "intent": "status_update",
+    "actions": [{ "action": "create_task", "subject": "planification budgétaire projet", "priority": "medium" }],
+    "sentiment": 0.5,
+    "weight": 1.0
+  },
+  {
+    "id": "21",
+    "text": "Il faut absolument corriger le bug de déconnexion avant la mise en prod de demain matin.",
+    "entities": [{ "type": "date", "value": "demain matin" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_task", "subject": "corriger bug déconnexion", "deadline": "demain matin", "priority": "critical" }],
+    "sentiment": -0.5,
+    "weight": 1.3
+  },
+  {
+    "id": "22",
+    "text": "Thomas prend en charge l'intégration Stripe dès la semaine prochaine.",
+    "entities": [
+      { "type": "person", "value": "Thomas" },
+      { "type": "project", "value": "intégration Stripe" },
+      { "type": "date", "value": "semaine prochaine" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "intégration Stripe", "assignee": "Thomas", "deadline": "semaine prochaine", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.5
+  },
+  {
+    "id": "23",
+    "text": "On décide de reporter le déploiement au 20 mai suite aux retours QA.",
+    "entities": [{ "type": "date", "value": "20 mai" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_alert", "subject": "déploiement reporté au 20 mai", "priority": "high" }],
+    "sentiment": -0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "24",
+    "text": "Quelle est l'avancement du module de facturation ? On est à combien de pourcent ?",
+    "entities": [{ "type": "project", "value": "module de facturation" }],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "avancement module facturation", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "25",
+    "text": "Clara a terminé la migration de la base de données, tout s'est passé sans incident.",
+    "entities": [
+      { "type": "person", "value": "Clara" },
+      { "type": "project", "value": "migration base de données" }
+    ],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.6,
+    "weight": 1.0
+  },
+  {
+    "id": "26",
+    "text": "On a besoin d'une revue de sécurité complète avant le 1er juillet, le client l'exige.",
+    "entities": [
+      { "type": "project", "value": "revue de sécurité" },
+      { "type": "date", "value": "1er juillet" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "revue de sécurité complète", "deadline": "1er juillet", "priority": "critical" }],
+    "sentiment": -0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "27",
+    "text": "Maxime gère la relation avec le partenaire Salesforce ce trimestre.",
+    "entities": [
+      { "type": "person", "value": "Maxime" },
+      { "type": "organization", "value": "Salesforce" }
+    ],
+    "intent": "status_update",
+    "actions": [{ "action": "follow_up", "subject": "relation partenaire Salesforce", "assignee": "Maxime", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "28",
+    "text": "Les performances de l'application ont chuté, le temps de réponse dépasse 5 secondes.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "dégradation performances application", "priority": "critical" }],
+    "sentiment": -0.7,
+    "weight": 1.3
+  },
+  {
+    "id": "29",
+    "text": "On va adopter la méthode Scrum avec des sprints de 2 semaines à partir du mois prochain.",
+    "entities": [{ "type": "date", "value": "mois prochain" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "mise en place Scrum", "deadline": "mois prochain", "priority": "medium" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "30",
+    "text": "Alerte : le certificat SSL expire dans 7 jours, il faut le renouveler.",
+    "entities": [{ "type": "date", "value": "7 jours" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "renouvellement certificat SSL", "deadline": "7 jours", "priority": "critical" }],
+    "sentiment": -0.3,
+    "weight": 1.3
+  },
+  {
+    "id": "31",
+    "text": "Élise doit préparer la présentation pour le comité de direction du 15 juin.",
+    "entities": [
+      { "type": "person", "value": "Élise" },
+      { "type": "date", "value": "15 juin" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "préparer présentation comité direction", "assignee": "Élise", "deadline": "15 juin", "priority": "high" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "32",
+    "text": "Combien coûte l'hébergement mensuel sur Azure pour notre configuration actuelle ?",
+    "entities": [{ "type": "organization", "value": "Azure" }],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "coût hébergement Azure", "priority": "low" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "33",
+    "text": "On bascule définitivement sur GraphQL pour toutes les nouvelles API à partir de maintenant.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "migration APIs vers GraphQL", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "34",
+    "text": "Antoine a identifié une faille de sécurité critique dans l'authentification, c'est urgent.",
+    "entities": [{ "type": "person", "value": "Antoine" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "faille sécurité authentification", "assignee": "Antoine", "priority": "critical" }],
+    "sentiment": -0.8,
+    "weight": 1.4
+  },
+  {
+    "id": "35",
+    "text": "Le client Orange veut une démo du produit jeudi après-midi.",
+    "entities": [
+      { "type": "organization", "value": "Orange" },
+      { "type": "date", "value": "jeudi après-midi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "démo produit client Orange", "deadline": "jeudi après-midi", "priority": "high" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "36",
+    "text": "Le déploiement de la version 2.4.1 s'est fait avec succès hier soir.",
+    "entities": [{ "type": "date", "value": "hier soir" }],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.7,
+    "weight": 1.0
+  },
+  {
+    "id": "37",
+    "text": "Faites le point sur les tickets bloquants avant la réunion de demain 9h.",
+    "entities": [{ "type": "date", "value": "demain 9h" }],
+    "intent": "planning",
+    "actions": [{ "action": "follow_up", "subject": "point tickets bloquants", "deadline": "demain 9h", "priority": "high" }],
+    "sentiment": -0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "38",
+    "text": "On a reçu une facture de 23 000 euros de notre fournisseur AWS, c'est au-dessus du budget.",
+    "entities": [
+      { "type": "amount", "value": "23 000 euros" },
+      { "type": "organization", "value": "AWS" }
+    ],
+    "intent": "problem_solving",
+    "actions": [{ "action": "follow_up", "subject": "dépassement budget AWS", "priority": "high" }],
+    "sentiment": -0.4,
+    "weight": 1.2
+  },
+  {
+    "id": "39",
+    "text": "Yasmine coordonne l'équipe de 5 développeurs sur le projet ERP jusqu'en décembre.",
+    "entities": [
+      { "type": "person", "value": "Yasmine" },
+      { "type": "project", "value": "projet ERP" },
+      { "type": "date", "value": "décembre" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "coordination équipe projet ERP", "assignee": "Yasmine", "deadline": "décembre", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.5
+  },
+  {
+    "id": "40",
+    "text": "Est-ce que les tests de charge ont été réalisés pour la prochaine mise en production ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "tests de charge avant mise en production", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "41",
+    "text": "On arrête d'utiliser Jenkins et on passe à GitHub Actions pour notre CI/CD.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "migration CI/CD vers GitHub Actions", "priority": "medium" }],
+    "sentiment": 0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "42",
+    "text": "Le pipeline de données est cassé depuis la mise à jour de ce matin, les tableaux de bord ne se rafraîchissent plus.",
+    "entities": [{ "type": "date", "value": "ce matin" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "pipeline données cassé", "priority": "critical" }],
+    "sentiment": -0.7,
+    "weight": 1.3
+  },
+  {
+    "id": "43",
+    "text": "Romain s'occupe de l'audit de code de la partie back-end cette semaine.",
+    "entities": [
+      { "type": "person", "value": "Romain" },
+      { "type": "date", "value": "cette semaine" }
+    ],
+    "intent": "status_update",
+    "actions": [{ "action": "follow_up", "subject": "audit de code back-end", "assignee": "Romain", "deadline": "cette semaine", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "44",
+    "text": "Il faut onboarder les 3 nouveaux développeurs lundi, préparer les accès et les machines.",
+    "entities": [{ "type": "date", "value": "lundi" }],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "onboarding nouveaux développeurs", "deadline": "lundi", "priority": "high" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "45",
+    "text": "Les revenus du mois d'avril atteignent 280 000 euros, en hausse de 12%.",
+    "entities": [
+      { "type": "amount", "value": "280 000 euros" },
+      { "type": "date", "value": "avril" }
+    ],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.7,
+    "weight": 1.0
+  },
+  {
+    "id": "46",
+    "text": "Pense à envoyer le compte-rendu de la réunion d'aujourd'hui à tous les participants.",
+    "entities": [{ "type": "date", "value": "aujourd'hui" }],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "envoyer compte-rendu réunion", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "47",
+    "text": "Kevin valide toutes les PR avant jeudi soir pour le release de vendredi.",
+    "entities": [
+      { "type": "person", "value": "Kevin" },
+      { "type": "date", "value": "jeudi soir" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "validation PR pour release", "assignee": "Kevin", "deadline": "jeudi soir", "priority": "high" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "48",
+    "text": "Le service email est en erreur 500 depuis 30 minutes, les notifications ne partent plus.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "service email en erreur", "priority": "critical" }],
+    "sentiment": -0.8,
+    "weight": 1.3
+  },
+  {
+    "id": "49",
+    "text": "On a décidé d'embaucher deux développeurs seniors d'ici la fin du trimestre.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "recrutement développeurs seniors", "priority": "high" }],
+    "sentiment": 0.4,
+    "weight": 1.0
+  },
+  {
+    "id": "50",
+    "text": "Quelle est la date de fin de contrat avec l'agence de design ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "date fin contrat agence design", "priority": "low" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "51",
+    "text": "Isabelle prend en charge la relation client avec BNP Paribas à partir du 1er mai.",
+    "entities": [
+      { "type": "person", "value": "Isabelle" },
+      { "type": "organization", "value": "BNP Paribas" },
+      { "type": "date", "value": "1er mai" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "gestion relation BNP Paribas", "assignee": "Isabelle", "deadline": "1er mai", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.5
+  },
+  {
+    "id": "52",
+    "text": "Le serveur de staging est inaccessible depuis ce matin, les déploiements sont bloqués.",
+    "entities": [{ "type": "date", "value": "ce matin" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "serveur staging inaccessible", "priority": "high" }],
+    "sentiment": -0.6,
+    "weight": 1.2
+  },
+  {
+    "id": "53",
+    "text": "On officialise le passage en télétravail complet pour l'équipe tech à partir de septembre.",
+    "entities": [{ "type": "date", "value": "septembre" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "mise en place télétravail complet équipe tech", "deadline": "septembre", "priority": "medium" }],
+    "sentiment": 0.4,
+    "weight": 1.0
+  },
+  {
+    "id": "54",
+    "text": "Damien doit tester le flux de paiement complet en environnement de recette avant lundi.",
+    "entities": [
+      { "type": "person", "value": "Damien" },
+      { "type": "date", "value": "lundi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "test flux paiement en recette", "assignee": "Damien", "deadline": "lundi", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.5
+  },
+  {
+    "id": "55",
+    "text": "Le module de reporting est en production depuis hier, aucun bug signalé.",
+    "entities": [{ "type": "date", "value": "hier" }],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.7,
+    "weight": 1.0
+  },
+  {
+    "id": "56",
+    "text": "Quelqu'un peut vérifier si la synchronisation avec Jira fonctionne correctement ?",
+    "entities": [{ "type": "organization", "value": "Jira" }],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "vérification synchronisation Jira", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "57",
+    "text": "On valide l'architecture microservices pour la refonte du back-end.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "refonte back-end en microservices", "priority": "high" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "58",
+    "text": "Le client Total a signalé que les exports PDF sont corrompus depuis la dernière mise à jour.",
+    "entities": [{ "type": "organization", "value": "Total" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "exports PDF corrompus", "priority": "high" }],
+    "sentiment": -0.5,
+    "weight": 1.3
+  },
+  {
+    "id": "59",
+    "text": "Léa coordonne l'intégration du nouveau système de gestion RH avec l'équipe produit.",
+    "entities": [
+      { "type": "person", "value": "Léa" },
+      { "type": "project", "value": "système de gestion RH" }
+    ],
+    "intent": "status_update",
+    "actions": [{ "action": "follow_up", "subject": "intégration système RH", "assignee": "Léa", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "60",
+    "text": "On doit renouveler l'abonnement Datadog avant le 30 de ce mois.",
+    "entities": [
+      { "type": "organization", "value": "Datadog" },
+      { "type": "date", "value": "30 de ce mois" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "renouvellement abonnement Datadog", "deadline": "30 de ce mois", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "61",
+    "text": "Hugo présente l'architecture technique à l'équipe direction demain à 10h.",
+    "entities": [
+      { "type": "person", "value": "Hugo" },
+      { "type": "date", "value": "demain à 10h" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "présentation architecture technique", "assignee": "Hugo", "deadline": "demain à 10h", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "62",
+    "text": "Les tests de régression ont tous échoué après le dernier déploiement, on rollback.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "échec tests régression, rollback nécessaire", "priority": "critical" }],
+    "sentiment": -0.8,
+    "weight": 1.4
+  },
+  {
+    "id": "63",
+    "text": "On adopte Python 3.12 pour tous les nouveaux services back-end.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "mise à jour Python 3.12 nouveaux services", "priority": "low" }],
+    "sentiment": 0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "64",
+    "text": "As-tu reçu la confirmation de livraison des serveurs Dell commandés en mars ?",
+    "entities": [
+      { "type": "organization", "value": "Dell" },
+      { "type": "date", "value": "mars" }
+    ],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "confirmation livraison serveurs Dell", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "65",
+    "text": "L'équipe QA a validé la release 3.2.0, on peut déployer ce soir.",
+    "entities": [{ "type": "date", "value": "ce soir" }],
+    "intent": "status_update",
+    "actions": [{ "action": "create_alert", "subject": "déploiement release 3.2.0 ce soir", "priority": "high" }],
+    "sentiment": 0.6,
+    "weight": 1.0
+  },
+  {
+    "id": "66",
+    "text": "Stéphane doit refactoriser le module d'import CSV avant la fin du sprint.",
+    "entities": [
+      { "type": "person", "value": "Stéphane" },
+      { "type": "project", "value": "module d'import CSV" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "refactorisation module import CSV", "assignee": "Stéphane", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.5
+  },
+  {
+    "id": "67",
+    "text": "On a perdu des données utilisateurs suite à une mauvaise migration, il faut investiguer immédiatement.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "perte données utilisateurs migration", "priority": "critical" }],
+    "sentiment": -0.9,
+    "weight": 1.5
+  },
+  {
+    "id": "68",
+    "text": "On référence désormais Notion comme outil officiel de documentation d'équipe.",
+    "entities": [{ "type": "organization", "value": "Notion" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "migration documentation vers Notion", "priority": "low" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "69",
+    "text": "Audrey doit organiser le team building de l'équipe pour le mois de juillet.",
+    "entities": [
+      { "type": "person", "value": "Audrey" },
+      { "type": "date", "value": "juillet" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "organisation team building", "assignee": "Audrey", "deadline": "juillet", "priority": "low" }],
+    "sentiment": 0.4,
+    "weight": 1.0
+  },
+  {
+    "id": "70",
+    "text": "Est-ce que le rapport d'audit de sécurité a été envoyé au RSSI ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "envoi rapport audit sécurité au RSSI", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "71",
+    "text": "Le service de notification push ne fonctionne plus sur iOS depuis la mise à jour d'hier.",
+    "entities": [{ "type": "date", "value": "hier" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "notifications push iOS en panne", "priority": "critical" }],
+    "sentiment": -0.6,
+    "weight": 1.3
+  },
+  {
+    "id": "72",
+    "text": "Quentin migre le module authentification vers OAuth2 d'ici la fin du mois.",
+    "entities": [
+      { "type": "person", "value": "Quentin" },
+      { "type": "project", "value": "module authentification OAuth2" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "migration module auth vers OAuth2", "assignee": "Quentin", "priority": "high" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "73",
+    "text": "On a finalement décidé de ne pas renouveler le contrat avec l'agence externe.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "clôture contrat agence externe", "priority": "medium" }],
+    "sentiment": -0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "74",
+    "text": "Combien d'utilisateurs actifs avons-nous eu ce mois-ci sur la plateforme ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "rapport utilisateurs actifs du mois", "priority": "low" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "75",
+    "text": "L'intégration continue se met en place progressivement, les équipes s'y habituent.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "76",
+    "text": "Fiona rédige les spécifications fonctionnelles pour le module CRM d'ici le 10 mai.",
+    "entities": [
+      { "type": "person", "value": "Fiona" },
+      { "type": "project", "value": "module CRM" },
+      { "type": "date", "value": "10 mai" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "rédaction spécifications fonctionnelles CRM", "assignee": "Fiona", "deadline": "10 mai", "priority": "high" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "77",
+    "text": "Le système de cache Redis consomme 90% de la RAM du serveur, il faut agir vite.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "surcharge mémoire Redis", "priority": "critical" }],
+    "sentiment": -0.7,
+    "weight": 1.3
+  },
+  {
+    "id": "78",
+    "text": "On valide la roadmap produit pour le prochain semestre lors de la réunion de jeudi.",
+    "entities": [{ "type": "date", "value": "jeudi" }],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "validation roadmap produit semestre", "deadline": "jeudi", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "79",
+    "text": "Victor configure l'environnement Docker pour les nouveaux développeurs cette semaine.",
+    "entities": [
+      { "type": "person", "value": "Victor" },
+      { "type": "date", "value": "cette semaine" }
+    ],
+    "intent": "status_update",
+    "actions": [{ "action": "follow_up", "subject": "configuration Docker nouveaux devs", "assignee": "Victor", "deadline": "cette semaine", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "80",
+    "text": "On a un incident de sécurité, des données clients ont été exposées, activez le plan de crise.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "incident sécurité données clients exposées", "priority": "critical" }],
+    "sentiment": -1.0,
+    "weight": 1.5
+  },
+  {
+    "id": "81",
+    "text": "On décide de lancer la bêta publique le 3 septembre avec 500 utilisateurs pilotes.",
+    "entities": [
+      { "type": "date", "value": "3 septembre" },
+      { "type": "amount", "value": "500 utilisateurs" }
+    ],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "lancement bêta publique", "deadline": "3 septembre", "priority": "high" }],
+    "sentiment": 0.5,
+    "weight": 1.0
+  },
+  {
+    "id": "82",
+    "text": "Sébastien doit remettre les accès VPN aux prestataires avant leur arrivée lundi.",
+    "entities": [
+      { "type": "person", "value": "Sébastien" },
+      { "type": "date", "value": "lundi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "configurer accès VPN prestataires", "assignee": "Sébastien", "deadline": "lundi", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.5
+  },
+  {
+    "id": "83",
+    "text": "Le NPS de ce trimestre est de 62, en progression de 8 points.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.6,
+    "weight": 1.0
+  },
+  {
+    "id": "84",
+    "text": "Est-ce que l'accès à la documentation Confluence est à jour pour toute l'équipe ?",
+    "entities": [{ "type": "organization", "value": "Confluence" }],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "vérification accès documentation Confluence", "priority": "low" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "85",
+    "text": "On va outsourcer la partie design UI/UX à une agence spécialisée dès le mois prochain.",
+    "entities": [{ "type": "date", "value": "mois prochain" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "sélection agence design UI/UX", "deadline": "mois prochain", "priority": "medium" }],
+    "sentiment": 0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "86",
+    "text": "Carole doit former les 8 nouveaux utilisateurs sur le CRM avant le déploiement.",
+    "entities": [
+      { "type": "person", "value": "Carole" },
+      { "type": "project", "value": "CRM" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "formation utilisateurs CRM", "assignee": "Carole", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.5
+  },
+  {
+    "id": "87",
+    "text": "L'API de géolocalisation retourne des erreurs 429, on dépasse les quotas.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "dépassement quota API géolocalisation", "priority": "high" }],
+    "sentiment": -0.5,
+    "weight": 1.2
+  },
+  {
+    "id": "88",
+    "text": "On retient la proposition de Capgemini pour le projet de transformation digitale.",
+    "entities": [{ "type": "organization", "value": "Capgemini" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "lancement projet transformation digitale Capgemini", "priority": "high" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "89",
+    "text": "Alexandre fait le bilan technique mensuel et l'envoie à la direction avant vendredi.",
+    "entities": [
+      { "type": "person", "value": "Alexandre" },
+      { "type": "date", "value": "vendredi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "bilan technique mensuel", "assignee": "Alexandre", "deadline": "vendredi", "priority": "medium" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "90",
+    "text": "Le temps de chargement de la page d'accueil dépasse 8 secondes, les utilisateurs se plaignent.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_task", "subject": "optimisation performance page d'accueil", "priority": "high" }],
+    "sentiment": -0.6,
+    "weight": 1.3
+  },
+  {
+    "id": "91",
+    "text": "Rappelle-moi de soumettre la déclaration TVA avant le 20 du mois.",
+    "entities": [{ "type": "date", "value": "20 du mois" }],
+    "intent": "information_request",
+    "actions": [{ "action": "create_reminder", "subject": "soumettre déclaration TVA", "deadline": "20 du mois", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "92",
+    "text": "L'équipe back-end a terminé les 3 endpoints de l'API REST, tests passés.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.6,
+    "weight": 1.0
+  },
+  {
+    "id": "93",
+    "text": "On planifie la revue annuelle des salaires pour la semaine du 20 juin.",
+    "entities": [{ "type": "date", "value": "semaine du 20 juin" }],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "revue annuelle salaires", "deadline": "semaine du 20 juin", "priority": "high" }],
+    "sentiment": 0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "94",
+    "text": "On a perdu la connexion à la base de données principale, toutes les opérations sont bloquées.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "perte connexion base de données principale", "priority": "critical" }],
+    "sentiment": -0.9,
+    "weight": 1.5
+  },
+  {
+    "id": "95",
+    "text": "On arrête le support de l'application mobile iOS v1, les utilisateurs doivent migrer vers v2.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "communication fin de support iOS v1", "priority": "high" }],
+    "sentiment": -0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "96",
+    "text": "Juliette coordonne la rédaction des CGU et de la politique de confidentialité avant le lancement.",
+    "entities": [{ "type": "person", "value": "Juliette" }],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "rédaction CGU et politique de confidentialité", "assignee": "Juliette", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.5
+  },
+  {
+    "id": "97",
+    "text": "Quel est le statut du ticket INFRA-4521 concernant la mise à jour des dépendances ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "statut ticket INFRA-4521 mise à jour dépendances", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "98",
+    "text": "Le module de reporting a été livré avec 2 jours d'avance, super boulot !",
+    "entities": [{ "type": "project", "value": "module de reporting" }],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.9,
+    "weight": 1.0
+  },
+  {
+    "id": "99",
+    "text": "Prévois un point hebdomadaire avec l'équipe data science chaque lundi à 9h30.",
+    "entities": [{ "type": "date", "value": "chaque lundi à 9h30" }],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "point hebdomadaire équipe data science", "deadline": "chaque lundi à 9h30", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "100",
+    "text": "On décide d'investir 50 000 euros dans l'infrastructure GPU pour accélérer les modèles ML.",
+    "entities": [{ "type": "amount", "value": "50 000 euros" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "acquisition infrastructure GPU", "priority": "high" }],
+    "sentiment": 0.4,
+    "weight": 1.0
+  },
+  {
+    "id": "101",
+    "text": "Le backup automatique n'a pas fonctionné depuis 3 jours, les données sont en risque.",
+    "entities": [{ "type": "date", "value": "3 jours" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "backup automatique défaillant", "priority": "critical" }],
+    "sentiment": -0.8,
+    "weight": 1.4
+  },
+  {
+    "id": "102",
+    "text": "Mehdi revu les performances SQL et réduit les temps de requête de 60%.",
+    "entities": [{ "type": "person", "value": "Mehdi" }],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.8,
+    "weight": 1.0
+  },
+  {
+    "id": "103",
+    "text": "On doit contractualiser avec un prestataire de tests de pénétration avant août.",
+    "entities": [{ "type": "date", "value": "août" }],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "sélection prestataire pentest", "deadline": "août", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "104",
+    "text": "Est-ce que les KPIs du tableau de bord direction sont bien alignés avec les objectifs annuels ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "alignement KPIs tableau de bord direction", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "105",
+    "text": "Camille présente le bilan du projet Phœnix à toute l'équipe vendredi prochain.",
+    "entities": [
+      { "type": "person", "value": "Camille" },
+      { "type": "project", "value": "Phœnix" },
+      { "type": "date", "value": "vendredi prochain" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_reminder", "subject": "présentation bilan projet Phœnix", "assignee": "Camille", "deadline": "vendredi prochain", "priority": "medium" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "106",
+    "text": "On a dépassé les 10 000 utilisateurs enregistrés, objectif atteint !",
+    "entities": [{ "type": "amount", "value": "10 000 utilisateurs" }],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.9,
+    "weight": 1.0
+  },
+  {
+    "id": "107",
+    "text": "La passerelle de paiement refuse les cartes Amex depuis ce matin, les ventes sont impactées.",
+    "entities": [{ "type": "date", "value": "ce matin" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "passerelle paiement Amex bloquée", "priority": "critical" }],
+    "sentiment": -0.8,
+    "weight": 1.4
+  },
+  {
+    "id": "108",
+    "text": "On intègre Intercom comme solution de support client live chat dès la semaine prochaine.",
+    "entities": [
+      { "type": "organization", "value": "Intercom" },
+      { "type": "date", "value": "semaine prochaine" }
+    ],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "intégration Intercom live chat", "deadline": "semaine prochaine", "priority": "medium" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "109",
+    "text": "Noémie pilote la refonte de l'expérience onboarding pour les nouveaux clients.",
+    "entities": [{ "type": "person", "value": "Noémie" }],
+    "intent": "status_update",
+    "actions": [{ "action": "follow_up", "subject": "refonte onboarding nouveaux clients", "assignee": "Noémie", "priority": "medium" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "110",
+    "text": "Peux-tu vérifier si la RGPD compliance est bien en place sur les nouveaux formulaires ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "vérification RGPD compliance nouveaux formulaires", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "111",
+    "text": "On a enfin résolu le problème de mémoire sur les workers Python, le système est stable.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.7,
+    "weight": 1.0
+  },
+  {
+    "id": "112",
+    "text": "Bastien doit documenter l'architecture du projet Atlas dans Confluence avant le 1er juin.",
+    "entities": [
+      { "type": "person", "value": "Bastien" },
+      { "type": "project", "value": "Atlas" },
+      { "type": "organization", "value": "Confluence" },
+      { "type": "date", "value": "1er juin" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "documentation architecture projet Atlas", "assignee": "Bastien", "deadline": "1er juin", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.5
+  },
+  {
+    "id": "113",
+    "text": "On enregistre une latence de 2 secondes supplémentaires sur le moteur de recherche, à investiguer.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "follow_up", "subject": "investigation latence moteur de recherche", "priority": "high" }],
+    "sentiment": -0.4,
+    "weight": 1.2
+  },
+  {
+    "id": "114",
+    "text": "On augmente le budget marketing digital de 30% pour le Q3.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "augmentation budget marketing digital Q3", "priority": "medium" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "115",
+    "text": "Sandrine récupère les retours utilisateurs de la bêta et les compile en rapport avant vendredi.",
+    "entities": [
+      { "type": "person", "value": "Sandrine" },
+      { "type": "date", "value": "vendredi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "compilation retours utilisateurs bêta", "assignee": "Sandrine", "deadline": "vendredi", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.5
+  },
+  {
+    "id": "116",
+    "text": "L'espace de stockage S3 est plein à 98%, les uploads échouent.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "stockage S3 saturé", "priority": "critical" }],
+    "sentiment": -0.7,
+    "weight": 1.3
+  },
+  {
+    "id": "117",
+    "text": "On adopte TypeScript strict mode sur tous les projets front-end à partir de maintenant.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "activation TypeScript strict mode projets front-end", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "118",
+    "text": "Nicolas développe le module de notification temps réel avec WebSocket cette semaine.",
+    "entities": [
+      { "type": "person", "value": "Nicolas" },
+      { "type": "project", "value": "module notification temps réel" },
+      { "type": "date", "value": "cette semaine" }
+    ],
+    "intent": "status_update",
+    "actions": [{ "action": "follow_up", "subject": "développement notifications WebSocket", "assignee": "Nicolas", "deadline": "cette semaine", "priority": "medium" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "119",
+    "text": "Le système de logs est saturé, on perd des événements critiques depuis minuit.",
+    "entities": [{ "type": "date", "value": "minuit" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "saturation système de logs, perte événements", "priority": "critical" }],
+    "sentiment": -0.8,
+    "weight": 1.4
+  },
+  {
+    "id": "120",
+    "text": "Florence réalise l'analyse concurrentielle des 5 principaux acteurs du marché avant fin mai.",
+    "entities": [
+      { "type": "person", "value": "Florence" },
+      { "type": "date", "value": "fin mai" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "analyse concurrentielle marché", "assignee": "Florence", "deadline": "fin mai", "priority": "medium" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "121",
+    "text": "Combien de temps reste-t-il avant l'expiration de notre plan Heroku ?",
+    "entities": [{ "type": "organization", "value": "Heroku" }],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "vérification expiration plan Heroku", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "122",
+    "text": "La phase de conception du projet Titan est terminée, on entre en phase de développement.",
+    "entities": [{ "type": "project", "value": "Titan" }],
+    "intent": "status_update",
+    "actions": [{ "action": "create_task", "subject": "démarrage phase développement projet Titan", "priority": "high" }],
+    "sentiment": 0.5,
+    "weight": 1.0
+  },
+  {
+    "id": "123",
+    "text": "On a une fuite mémoire dans le worker de traitement d'images, le service redémarre toutes les heures.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "fuite mémoire worker traitement images", "priority": "high" }],
+    "sentiment": -0.6,
+    "weight": 1.3
+  },
+  {
+    "id": "124",
+    "text": "On valide le recrutement de deux data scientists pour renforcer l'équipe ML.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "recrutement data scientists équipe ML", "priority": "high" }],
+    "sentiment": 0.4,
+    "weight": 1.0
+  },
+  {
+    "id": "125",
+    "text": "Dylan intègre le SDK Amplitude pour le tracking des événements produit avant le 15.",
+    "entities": [
+      { "type": "person", "value": "Dylan" },
+      { "type": "organization", "value": "Amplitude" },
+      { "type": "date", "value": "15" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "intégration SDK Amplitude", "assignee": "Dylan", "deadline": "15", "priority": "medium" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "126",
+    "text": "Le dashboard analytics ne charge plus depuis la mise à jour de Grafana.",
+    "entities": [{ "type": "organization", "value": "Grafana" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "dashboard analytics inaccessible après update Grafana", "priority": "high" }],
+    "sentiment": -0.5,
+    "weight": 1.2
+  },
+  {
+    "id": "127",
+    "text": "On décide de mutualiser les environnements de dev et de recette pour réduire les coûts.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "mutualisation environnements dev/recette", "priority": "low" }],
+    "sentiment": 0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "128",
+    "text": "Solène met à jour toutes les dépendances NPM et fait un audit de vulnérabilités cette semaine.",
+    "entities": [
+      { "type": "person", "value": "Solène" },
+      { "type": "date", "value": "cette semaine" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "mise à jour dépendances NPM et audit vulnérabilités", "assignee": "Solène", "deadline": "cette semaine", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.5
+  },
+  {
+    "id": "129",
+    "text": "On a intégré le paiement en 3 fois avec notre partenaire Alma, les tests sont positifs.",
+    "entities": [{ "type": "organization", "value": "Alma" }],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.7,
+    "weight": 1.0
+  },
+  {
+    "id": "130",
+    "text": "Pense à relancer le client Michelin qui n'a pas répondu à notre proposition commerciale.",
+    "entities": [{ "type": "organization", "value": "Michelin" }],
+    "intent": "planning",
+    "actions": [{ "action": "follow_up", "subject": "relance client Michelin proposition commerciale", "priority": "high" }],
+    "sentiment": -0.1,
+    "weight": 1.0
+  },
+  {
+    "id": "131",
+    "text": "Les alertes monitoring PagerDuty sont désactivées depuis hier soir, personne n'a été notifié.",
+    "entities": [
+      { "type": "organization", "value": "PagerDuty" },
+      { "type": "date", "value": "hier soir" }
+    ],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "alertes monitoring PagerDuty désactivées", "priority": "critical" }],
+    "sentiment": -0.7,
+    "weight": 1.4
+  },
+  {
+    "id": "132",
+    "text": "On va utiliser Terraform pour automatiser le provisioning de l'infrastructure cloud.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "mise en place Terraform infrastructure cloud", "priority": "medium" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "133",
+    "text": "Tristan rédige les cas de test pour le module de gestion des permissions avant jeudi.",
+    "entities": [
+      { "type": "person", "value": "Tristan" },
+      { "type": "date", "value": "jeudi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "rédaction cas de test module permissions", "assignee": "Tristan", "deadline": "jeudi", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.5
+  },
+  {
+    "id": "134",
+    "text": "Quel est le nombre de tickets ouverts en attente de traitement côté support ?",
+    "entities": [],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "bilan tickets support ouverts", "priority": "medium" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "135",
+    "text": "L'équipe a livré la fonctionnalité d'export Excel en avance, les tests sont bons.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.8,
+    "weight": 1.0
+  },
+  {
+    "id": "136",
+    "text": "Chloé suit l'avancement de la migration Kubernetes et fait un point vendredi.",
+    "entities": [
+      { "type": "person", "value": "Chloé" },
+      { "type": "project", "value": "migration Kubernetes" },
+      { "type": "date", "value": "vendredi" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "follow_up", "subject": "point migration Kubernetes", "assignee": "Chloé", "deadline": "vendredi", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "137",
+    "text": "Le webhook Slack ne reçoit plus les notifications de déploiement depuis hier.",
+    "entities": [
+      { "type": "organization", "value": "Slack" },
+      { "type": "date", "value": "hier" }
+    ],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "webhook Slack notifications déploiement en panne", "priority": "medium" }],
+    "sentiment": -0.3,
+    "weight": 1.1
+  },
+  {
+    "id": "138",
+    "text": "On abandonne la solution on-premise et on migre tout sur GCP d'ici la fin d'année.",
+    "entities": [{ "type": "date", "value": "fin d'année" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "migration infrastructure vers GCP", "deadline": "fin d'année", "priority": "high" }],
+    "sentiment": 0.2,
+    "weight": 1.0
+  },
+  {
+    "id": "139",
+    "text": "Olivier doit implémenter le mode sombre (dark mode) sur l'application mobile avant le 20 mai.",
+    "entities": [
+      { "type": "person", "value": "Olivier" },
+      { "type": "project", "value": "dark mode application mobile" },
+      { "type": "date", "value": "20 mai" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "implémentation dark mode application mobile", "assignee": "Olivier", "deadline": "20 mai", "priority": "medium" }],
+    "sentiment": 0.2,
+    "weight": 1.5
+  },
+  {
+    "id": "140",
+    "text": "Le projet Apollo a été livré dans les délais et dans le budget prévu, bravo à l'équipe.",
+    "entities": [{ "type": "project", "value": "Apollo" }],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.9,
+    "weight": 1.0
+  },
+  {
+    "id": "141",
+    "text": "Peut-on avoir un rapport des temps de réponse API des 30 derniers jours ?",
+    "entities": [{ "type": "date", "value": "30 derniers jours" }],
+    "intent": "information_request",
+    "actions": [{ "action": "follow_up", "subject": "rapport temps de réponse API 30 jours", "priority": "low" }],
+    "sentiment": 0.0,
+    "weight": 1.0
+  },
+  {
+    "id": "142",
+    "text": "On alloue un budget de 80 000 euros pour la refonte du site web cette année.",
+    "entities": [{ "type": "amount", "value": "80 000 euros" }],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "refonte site web", "priority": "high" }],
+    "sentiment": 0.3,
+    "weight": 1.0
+  },
+  {
+    "id": "143",
+    "text": "Mathieu configure les alertes Prometheus pour les métriques critiques d'ici demain.",
+    "entities": [
+      { "type": "person", "value": "Mathieu" },
+      { "type": "date", "value": "demain" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "configuration alertes Prometheus métriques critiques", "assignee": "Mathieu", "deadline": "demain", "priority": "high" }],
+    "sentiment": 0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "144",
+    "text": "On constate une anomalie dans les logs : des tentatives de connexion suspectes depuis une IP étrangère.",
+    "entities": [],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "tentatives connexion suspectes IP étrangère", "priority": "critical" }],
+    "sentiment": -0.8,
+    "weight": 1.5
+  },
+  {
+    "id": "145",
+    "text": "On officialise le partenariat avec HubSpot pour l'automatisation marketing.",
+    "entities": [{ "type": "organization", "value": "HubSpot" }],
+    "intent": "status_update",
+    "actions": [{ "action": "create_task", "subject": "mise en place intégration HubSpot", "priority": "medium" }],
+    "sentiment": 0.5,
+    "weight": 1.0
+  },
+  {
+    "id": "146",
+    "text": "Lucie coordonne le passage à la version 4 de l'API publique avec les clients partenaires.",
+    "entities": [{ "type": "person", "value": "Lucie" }],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "migration API publique v4 avec partenaires", "assignee": "Lucie", "priority": "high" }],
+    "sentiment": 0.0,
+    "weight": 1.5
+  },
+  {
+    "id": "147",
+    "text": "L'import de données depuis l'ERP SAP échoue depuis la mise à jour du connecteur.",
+    "entities": [{ "type": "organization", "value": "SAP" }],
+    "intent": "problem_solving",
+    "actions": [{ "action": "create_alert", "subject": "import ERP SAP en échec après update connecteur", "priority": "high" }],
+    "sentiment": -0.5,
+    "weight": 1.2
+  },
+  {
+    "id": "148",
+    "text": "On va lancer un programme de bug bounty public pour améliorer la sécurité.",
+    "entities": [],
+    "intent": "decision_making",
+    "actions": [{ "action": "create_task", "subject": "lancement programme bug bounty", "priority": "medium" }],
+    "sentiment": 0.4,
+    "weight": 1.0
+  },
+  {
+    "id": "149",
+    "text": "Gaël doit migrer la base de données MongoDB vers PostgreSQL avant le 30 juin.",
+    "entities": [
+      { "type": "person", "value": "Gaël" },
+      { "type": "date", "value": "30 juin" }
+    ],
+    "intent": "planning",
+    "actions": [{ "action": "create_task", "subject": "migration MongoDB vers PostgreSQL", "assignee": "Gaël", "deadline": "30 juin", "priority": "high" }],
+    "sentiment": -0.1,
+    "weight": 1.5
+  },
+  {
+    "id": "150",
+    "text": "Super sprint ! Toutes les user stories ont été complétées sans régression.",
+    "entities": [],
+    "intent": "status_update",
+    "actions": [],
+    "sentiment": 0.9,
+    "weight": 1.0
+  }
+]

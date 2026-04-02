@@ -317,10 +317,12 @@ class ConversationAnalyzerModel(BertPreTrainedModel):
 
 # ── Factory ───────────────────────────────────────────────────
 def build_model(
-    pretrained_name: str = "camembert-base",
+    pretrained_name: str = "bert-base-multilingual-cased",
     analyzer_cfg:    Optional[AnalyzerConfig] = None,
+    *,
+    load_weights: bool = True,
 ) -> ConversationAnalyzerModel:
-    """Instantiate from a HuggingFace checkpoint (CamemBERT for French)."""
+    """Instantiate from a HuggingFace BERT checkpoint."""
     config = BertConfig.from_pretrained(pretrained_name)
     # Add task-specific dimensions to config (serialized with model)
     config.num_labels_ner      = NUM_NER_LABELS
@@ -328,10 +330,13 @@ def build_model(
     config.num_labels_action   = NUM_ACTION_LABELS
     config.num_labels_relation = NUM_RELATION_LABELS
 
-    model = ConversationAnalyzerModel.from_pretrained(
-        pretrained_name,
-        config       = config,
-        analyzer_cfg = analyzer_cfg,
-        ignore_mismatched_sizes = True,
-    )
-    return model
+    if load_weights:
+        return ConversationAnalyzerModel.from_pretrained(
+            pretrained_name,
+            config       = config,
+            analyzer_cfg = analyzer_cfg,
+            ignore_mismatched_sizes = True,
+        )
+
+    # Config-only init: avoids downloading large model weights (useful for low disk / offline).
+    return ConversationAnalyzerModel(config=config, analyzer_cfg=analyzer_cfg)
